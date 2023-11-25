@@ -1,0 +1,15 @@
+name: hiercadnet_lin
+channels:
+        - defaults
+        - conda-forge
+dependencies:
+        - python=3.8
+        - numpy
+        - h5py
+        - scikit-learn
+        - cudatoolkit=11.8.0
+        - pip
+        - pip:
+                - nvidia-cudnn-cu11==8.6.0.163
+                - tensorflow
+#FUNKTIONIERT AKTUELL NICHT!

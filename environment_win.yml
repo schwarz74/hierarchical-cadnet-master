@@ -1,0 +1,19 @@
+name: hiercadnet_win
+channels:
+        - defaults
+        - conda-forge
+dependencies:
+        - python=3.8
+        - numpy
+        - h5py
+        - scikit-learn
+        - pip
+        - pip:
+                - tensorflow<2.11
+
+# Version              Python Version    Compiler     Build tools    cuDNN    CUDA
+# tensorflow-2.10.0    3.7-3.10          GCC 9.3.1    Bazel 5.1.1    8.1      11.2
+# https://www.youtube.com/watch?v=hHWkvEcDBO0
+# how to install cuda & cudnn
+# vs community 2017: misc folder
+# ODER: https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=15
