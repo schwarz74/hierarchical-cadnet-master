@@ -3,7 +3,7 @@
 import tensorflow as tf
 import datetime as dt
 from src.network_adj import HierarchicalGCNN as HierGCNN
-from src.helper import dataloader_adj as dataloader
+from src.helper import dataloader_adj_capped as dataloader
 
 
 def train_step(x, y):
@@ -64,8 +64,8 @@ if __name__ == '__main__':
         print(f"Epoch {epoch + 1} of {num_epochs}")
         start_time = time.time()
 
-        train_dataloader = dataloader(train_set_path)
-        val_dataloader = dataloader(val_set_path)
+        train_dataloader = dataloader(train_set_path, 10000)
+        val_dataloader = dataloader(val_set_path, 10000)
 
         # Run training loop
         with summary_writer.as_default():
