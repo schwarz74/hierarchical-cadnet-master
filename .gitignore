@@ -1,0 +1,5 @@
+log/*
+
+debug_compn.txt
+debug.txt
+.vscode/launch.json
