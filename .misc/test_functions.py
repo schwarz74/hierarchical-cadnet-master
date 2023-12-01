@@ -166,8 +166,49 @@ def browe_war_h5_nth(n):
         print("---")
 
 
-get_items("./data/","train_batch_doublesize.h5")
-get_items_gr_then("./data/","train_batch_doublesize.h5",10000)
+def dataloader_adj(file_path):
+    """Load dataset with only adjacency matrix information."""
+    hf = h5py.File(file_path, 'r')
+
+    for key in list(hf.keys()):
+        group = hf.get(key)
+
+        V_1 = []#tf.Variable(np.array(group.get("V_1")), dtype=tf.dtypes.float32, name="V_1")
+        V_2 = []#](np.array(group.get("V_2")), dtype=tf.dtypes.float32, name="V_2")
+        labels = np.array(group.get("labels"), dtype=np.int16)
+
+        A_1_idx = np.array(group.get("A_1_idx"))
+        A_1_values = np.array(group.get("A_1_values"))
+        A_1_shape = np.array(group.get("A_1_shape"))
+        A_1_sparse = []#tf.SparseTensor(A_1_idx, A_1_values, A_1_shape)
+        A_1 = None#tf.Variable(tf.sparse.to_dense(A_1_sparse, default_value=0.), dtype=tf.dtypes.float32, name="A_1")
+
+        A_2_idx = np.array(group.get("A_2_idx"))
+        A_2_values = np.array(group.get("A_2_values"))
+        A_2_shape = np.array(group.get("A_2_shape"))
+        A_2_sparse = []#tf.SparseTensor(A_2_idx, A_2_values, A_2_shape)
+        A_2 = []#tf.Variable(tf.sparse.to_dense(A_2_sparse, default_value=0.), dtype=tf.dtypes.float32, name="A_2")
+
+        A_3_idx = np.array(group.get("A_3_idx"))
+        A_3_values = np.array(group.get("A_3_values"))
+        A_3_shape = np.array(group.get("A_3_shape"))
+        A_3_sparse = []#tf.SparseTensor(A_3_idx, A_3_values, A_3_shape)
+        A_3 = []#tf.Variable(tf.sparse.to_dense(A_3_sparse, default_value=0.), dtype=tf.dtypes.float32, name="A_3")
+
+        yield [V_1, A_1, V_2, A_2, A_3], labels
+
+    hf.close()
+
+
+for step, (x_batch_train, y_batch_train) in enumerate(dataloader_adj("data/training_MFCAD++.h5")):
+    # Log every 20 batches.
+    if step % 20 == 0:
+        print(
+            "Training loss (for one batch) at step %d: %.4f"
+            % (step, float(1.0))
+        )
+#get_items("./data/","train_batch_doublesize.h5")
+#get_items_gr_then("./data/","train_batch_doublesize.h5",10000)
 #browe_war_h5_nth(0)
 
 
