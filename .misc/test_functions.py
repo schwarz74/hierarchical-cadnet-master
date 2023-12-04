@@ -14,7 +14,7 @@ def test_h5(path="./data/training_MFCAD++.h5"):
 def get_items(path="./data/",filename="training_MFCAD++.h5"):
     """Load dataset with only adjacency matrix information."""
     hf = h5py.File(path+filename, 'r')
-    with open(f"debug_{filename}.txt", 'w') as writer:
+    with open(f"./.misc/debug_txts/debug_{filename}.txt", 'w') as writer: 
         for key in list(hf.keys()):
             group = hf.get(key)
 
@@ -101,7 +101,7 @@ def print_items(path="./data/training_MFCAD++.h5"):
 def get_items_gr_then(path="./data/",filename="training_MFCAD++.h5",comp_n=10000):
     """Load dataset with only adjacency matrix information."""
     hf = h5py.File(path+filename, 'r')
-    with open(f"debug_grt_{filename}.txt", 'w') as writer:
+    with open(f"./.misc/debug_txts/debug_grt_{filename}.txt", 'w') as writer:
         for key in list(hf.keys()):
             group = hf.get(key)
 
@@ -174,7 +174,7 @@ def dataloader_adj(file_path):
         group = hf.get(key)
 
         V_1 = []#tf.Variable(np.array(group.get("V_1")), dtype=tf.dtypes.float32, name="V_1")
-        V_2 = []#](np.array(group.get("V_2")), dtype=tf.dtypes.float32, name="V_2")
+        V_2 = np.array(group.get("V_2"))
         labels = np.array(group.get("labels"), dtype=np.int16)
 
         A_1_idx = np.array(group.get("A_1_idx"))
@@ -199,16 +199,15 @@ def dataloader_adj(file_path):
 
     hf.close()
 
-
-for step, (x_batch_train, y_batch_train) in enumerate(dataloader_adj("data/training_MFCAD++.h5")):
-    # Log every 20 batches.
-    if step % 20 == 0:
-        print(
-            "Training loss (for one batch) at step %d: %.4f"
-            % (step, float(1.0))
-        )
-#get_items("./data/","train_batch_doublesize.h5")
-#get_items_gr_then("./data/","train_batch_doublesize.h5",10000)
+'''
+with open("./.misc/debug_txts/V2shapes.txt", 'w') as writer:
+    for step, (x_batch_train, y_batch_train) in enumerate(dataloader_adj("data/training_MFCAD++.h5")):
+        V_1, A_1, V_2, A_2, A_3 = x_batch_train
+        writer.write(f"step: {step} \t V2:\n")
+        writer.write(str(list(V_2)))
+        writer.write("\n-------------\n")'''
+get_items("./data/","training_MFCAD++.h5")
+#get_items_gr_then("./data/","training_MFCAD++.h5",10000)
 #browe_war_h5_nth(0)
 
 
