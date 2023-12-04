@@ -206,8 +206,10 @@ with open("./.misc/debug_txts/V2shapes.txt", 'w') as writer:
         writer.write(f"step: {step} \t V2:\n")
         writer.write(str(list(V_2)))
         writer.write("\n-------------\n")'''
-get_items("./data/","training_MFCAD++.h5")
-#get_items_gr_then("./data/","training_MFCAD++.h5",10000)
+#get_items("./data/","training_MFCAD++.h5")
+#get_items_gr_then("./data/","training_batch.h5",10000)
+#get_items_gr_then("./data/","val_batch.h5",10000)
+#get_items_gr_then("./data/","test_batch.h5",10000)
 #browe_war_h5_nth(0)
 
 

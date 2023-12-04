@@ -34,11 +34,11 @@ if __name__ == '__main__':
     num_classes = 25
     num_layers = 6
     units = 512
-    num_epochs = 100
+    num_epochs = 10#0
     learning_rate = 1e-2
     dropout_rate = 0.3
-    train_set_path = "data/training_MFCAD++.h5"
-    val_set_path = "data/val_MFCAD++.h5"
+    train_set_path = "data/training_batch.h5"
+    val_set_path = "data/val_batch.h5"
 
     save_name = f'edge_lvl_{num_layers}_units_{units}_epochs_{num_epochs}_date_{dt.datetime.now().strftime("%Y-%m-%d")}'
 

@@ -3,3 +3,5 @@ log/*
 debug_compn.txt
 debug.txt
 .vscode/launch.json
+src/__pycache__/*
+.misc/debug_txts/*
