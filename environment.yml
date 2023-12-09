@@ -1,4 +1,4 @@
-name: hiercadnet
+name: hiercadnet_classic
 channels:
         - defaults
         - conda-forge

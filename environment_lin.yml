@@ -7,9 +7,8 @@ dependencies:
         - numpy
         - h5py
         - scikit-learn
-        - cudatoolkit=11.8.0
+        - pythonocc-core=7.5.1
+        - occt=7.5.1
         - pip
         - pip:
-                - nvidia-cudnn-cu11==8.6.0.163
                 - tensorflow
-#FUNKTIONIERT AKTUELL NICHT!
