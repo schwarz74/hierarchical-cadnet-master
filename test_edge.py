@@ -31,7 +31,7 @@ if __name__ == '__main__':
     units = 512
     learning_rate = 1e-2
     dropout_rate = 0.3
-    checkpoint_path = "checkpoint/lr_0.01_adj_lvl_6_MFCAD++_units_512_date_2022-02-17_epochs_100.ckpt"
+    checkpoint_path = "checkpoint/MF_CAD++_residual_lvl_7_edge_MFCAD++_units_512_date_2021-07-27_epochs_100.ckpt"
     test_set_path = "data/test_MFCAD++.h5"
 
     model = HierGCNN(units=units, rate=dropout_rate, num_classes=num_classes, num_layers=num_layers)

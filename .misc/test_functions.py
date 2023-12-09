@@ -1,5 +1,6 @@
 import h5py
 import numpy as np
+import tensorflow as tf
 
 def test_h5(path="./data/training_MFCAD++.h5"):
     f = h5py.File(path, "r")
@@ -78,4 +79,12 @@ def print_h5_keys(n):
         print( np.array(group.get(key2)))
         print("---")
 
+def print_checkpoint_data(checkpoint_name):
+    reader = tf.train.load_checkpoint(f"./checkpoint/{checkpoint_name}")
+    shape_from_key = reader.get_variable_to_shape_map()
+    dtype_from_key = reader.get_variable_to_dtype_map()
+    return
+
+#print_checkpoint_data("MF_CAD++_residual_lvl_7_edge_MFCAD++_units_512_date_2021-07-27_epochs_100.ckpt")
+print_checkpoint_data("edge_lvl_6_units_512_epochs_10_date_2023-12-04.ckpt")
 

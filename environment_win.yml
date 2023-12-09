@@ -1,4 +1,4 @@
-name: hiercadnet_win_
+name: hiercadnet_win
 channels:
         - defaults
         - conda-forge
@@ -12,6 +12,7 @@ dependencies:
         - pip
         - pip:
                 - tensorflow<2.11
+                - PyQt5
 
 # Version              Python Version    Compiler     Build tools    cuDNN    CUDA
 # tensorflow-2.10.0    3.7-3.10          GCC 9.3.1    Bazel 5.1.1    8.1      11.2

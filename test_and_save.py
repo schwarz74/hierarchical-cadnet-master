@@ -275,13 +275,12 @@ def triangulation_from_face(face, face_tag, work_facets, work_nodes, facet_face_
     aTriangulation = BRep_Tool().Triangulation(face, aLoc)
     aTrsf = aLoc.Transformation()
 
-    aNodes = aTriangulation.Nodes()
     aTriangles = aTriangulation.Triangles()
 
     node_link = {}
 
     for i in range(1, aTriangulation.NbNodes() + 1):
-        node = aNodes.Value(i)
+        node = aTriangulation.Node(i)
         node.Transform(aTrsf)
         node_tag = len(work_nodes)
         work_nodes[node_tag] = np.array([node.X(), node.Y(), node.Z()])
@@ -631,7 +630,7 @@ def test_step(x):
 if __name__ == '__main__':
     with_labels = True
     step_dir = "data/"
-    step_name = "1_true"
+    step_name = "61"#"1_true"
     checkpoint_path = "checkpoint/MF_CAD++_residual_lvl_7_edge_MFCAD++_units_512_date_2021-07-27_epochs_100.ckpt"
     num_classes = 25
     num_layers = 7
