@@ -3,10 +3,12 @@ channels:
         - defaults
         - conda-forge
 dependencies:
-        - python=3.9
+        - python=3.8
         - numpy
         - h5py
         - scikit-learn
+        - pythonocc-core=7.5.1
+        - occt=7.5.1
         - pip
         - pip:
-                - tensorflow[and-cuda]
+                - tensorflow

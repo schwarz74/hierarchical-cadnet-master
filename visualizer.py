@@ -126,7 +126,7 @@ def show_random():
 
 if __name__ == '__main__':
     # User Defined
-    dataset_dir = "step"
+    dataset_dir = "data/"
 
     colors = {name: Quantity_Color(COLORS[name]) for name in COLORS}
 
