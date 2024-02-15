@@ -7,8 +7,9 @@ def analysis_report_mfcadplus(y_true, y_pred):
                     "Rectangular through step", "2-sides through step", "Slanted through step", "O-ring", "Blind hole",
                     "Triangular pocket", "Rectangular pocket", "6-sides pocket", "Circular end pocket",
                     "Rectangular blind slot", "Vertical circular end blind slot", "Horizontal circular end blind slot",
-                    "Triangular blind step", "Circular blind step", "Rectangular blind step", "Round", "Stock"]
-    labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+                    "Triangular blind step", "Circular blind step", "Rectangular blind step", "Round", 
+                    "drill_pocket_140deg", "spotdrill_cone_90deg", "stepdrill_pocket_90deg", "stock"]
+    labels = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
 
     print(classification_report(y_true, y_pred, labels=labels, target_names=target_names, digits=4))
 

@@ -31,14 +31,14 @@ if __name__ == '__main__':
     import time
 
     # User defined parameters.
-    num_classes = 25
+    num_classes = 28
     num_layers = 6
     units = 512
     num_epochs = 1
     learning_rate = 1e-2
     dropout_rate = 0.3
-    train_set_path = "data/train__filtered_batch.h5"
-    val_set_path = "data/val__filtered_batch.h5"
+    train_set_path = "data/train_filtered_batch.h5"
+    val_set_path = "data/val_filtered_batch.h5"
 
     save_name = f'edge_lvl_{num_layers}_units_{units}_epochs_{num_epochs}_date_{dt.datetime.now().strftime("%Y-%m-%d")}'
 

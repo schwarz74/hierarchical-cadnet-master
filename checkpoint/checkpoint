@@ -1,2 +1,2 @@
-model_checkpoint_path: "edge_lvl_6_units_512_epochs_1_date_2023-12-10.ckpt"
-all_model_checkpoint_paths: "edge_lvl_6_units_512_epochs_1_date_2023-12-10.ckpt"
+model_checkpoint_path: "edge_lvl_6_units_512_epochs_1_date_2024-02-15.ckpt"
+all_model_checkpoint_paths: "edge_lvl_6_units_512_epochs_1_date_2024-02-15.ckpt"
