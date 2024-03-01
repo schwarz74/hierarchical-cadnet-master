@@ -15,21 +15,23 @@ from OCC.Core.AIS import AIS_ColoredShape
 from OCC.Display.SimpleGui import init_display
 
 
-LABELS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+LABELS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27]
 
 FEAT_NAMES = ["Chamfer", "Through hole", "Triangular passage", "Rectangular passage", "6-sides passage",
                 "Triangular through slot", "Rectangular through slot", "Circular through slot",
                 "Rectangular through step", "2-sides through step", "Slanted through step", "O-ring", "Blind hole",
                 "Triangular pocket", "Rectangular pocket", "6-sides pocket", "Circular end pocket",
                 "Rectangular blind slot", "Vertical circular end blind slot", "Horizontal circular end blind slot",
-                "Triangular blind step", "Circular blind step", "Rectangular blind step", "Round", "Stock"]
+                "Triangular blind step", "Circular blind step", "Rectangular blind step", "Round",
+                 "Basic Drilling", "Stop Drilling", "Step Drilling", "Stock"]
 
 COLORS = {"Chamfer": 0, "Through hole": 490, "Triangular passage": 500, "Rectangular passage": 470, "6-sides passage": 100,
                 "Triangular through slot": 120, "Rectangular through slot": 140, "Circular through slot": 160,
                 "Rectangular through step": 180, "2-sides through step": 200, "Slanted through step": 220, "O-ring": 240, "Blind hole": 260,
                 "Triangular pocket": 280, "Rectangular pocket": 300, "6-sides pocket": 320, "Circular end pocket": 340,
                 "Rectangular blind slot": 360, "Vertical circular end blind slot": 380, "Horizontal circular end blind slot": 400,
-                "Triangular blind step": 420, "Circular blind step": 440, "Rectangular blind step": 460, "Round": 480, "Stock": 60}
+                "Triangular blind step": 420, "Circular blind step": 440, "Rectangular blind step": 460, "Round": 480,
+                 "Basic Drilling":9, "Stop Drilling":10, "Step Drilling":11, "Stock": 60}
 
 
 def read_step_with_labels(filename):
