@@ -300,6 +300,10 @@ def triangulation_from_face(face, face_tag, work_facets, work_nodes, facet_face_
         wf.get_normal()
         wf.get_d_coefficient()
         wf.get_centroid()
+        # fix for cone tips having two identical points in a triangle which causes norm to become nan
+        if np.isnan(wf.normal).any():
+            print("facet dropped...")
+            continue
         work_facets[wf.facet_tag] = wf
 
     return work_facets, work_nodes, facet_face_link
@@ -630,10 +634,10 @@ def test_step(x):
 if __name__ == '__main__':
     with_labels = True
     step_dir = "data/"
-    step_name = "119"
-    checkpoint_path = "checkpoint/edge_lvl_6_units_512_epochs_1_date_2023-12-10.ckpt" #das buggt unabh. von test_edge rum auf 24
+    step_name = "13890"
+    checkpoint_path = "checkpoint/edge_lvl_6_units_512_epochs_10_date_2024-02-16.ckpt"#"checkpoint/edge_lvl_6_units_512_epochs_1_date_2023-12-10.ckpt" #das buggt unabh. von test_edge rum auf 24
     #checkpoint_path = "checkpoint/MF_CAD++_residual_lvl_7_edge_MFCAD++_units_512_date_2021-07-27_epochs_100.ckpt"
-    num_classes = 25
+    num_classes = 28
     num_layers = 6
     units = 512
     dropout_rate = 0.3
