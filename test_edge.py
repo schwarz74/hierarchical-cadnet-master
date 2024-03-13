@@ -31,8 +31,8 @@ if __name__ == '__main__':
     units = 512
     learning_rate = 1e-2
     dropout_rate = 0.3
-    checkpoint_path = "checkpoint/edge_lvl_6_units_512_epochs_100_date_2024-03-11.ckpt"
-    test_set_path = "data/test_MFCAD++.h5"
+    checkpoint_path = "checkpoint/edge_lvl_6_units_512_epochs_100_date_2024-03-12.ckpt"
+    test_set_path = "data/test_vn.h5"
 
     model = HierGCNN(units=units, rate=dropout_rate, num_classes=num_classes, num_layers=num_layers)
     optimizer = tf.keras.optimizers.Adam()
