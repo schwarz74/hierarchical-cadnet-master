@@ -635,8 +635,7 @@ if __name__ == '__main__':
     with_labels = True
     step_dir = "data/"
     step_name = "test2"
-    checkpoint_path = "checkpoint/edge_lvl_6_units_512_epochs_100_date_2024-03-01.ckpt"#"checkpoint/edge_lvl_6_units_512_epochs_1_date_2023-12-10.ckpt" #das buggt unabh. von test_edge rum auf 24
-    #checkpoint_path = "checkpoint/MF_CAD++_residual_lvl_7_edge_MFCAD++_units_512_date_2021-07-27_epochs_100.ckpt"
+    checkpoint_path = "checkpoint/edge_lvl_6_units_512_epochs_100_date_2024-03-01.ckpt"
     num_classes = 28
     num_layers = 6
     units = 512
